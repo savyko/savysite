@@ -1,0 +1,34 @@
+Manual setup Django-admin
+
+https://bobbyhadz.com/blog/django-admin-is-not-recognized-as-internal-or-external-command
+Chạy các câu lệnh sau:
+# 👇️ create virtual environment
+python -m venv venv
+
+# 👇️ activate on Windows (cmd.exe)
+venv\Scripts\activate.bat
+
+# 👇️ activate on Windows (PowerShell)
+venv\Scripts\Activate.ps1
+
+# 👇️ activate on Unix or MacOS
+source venv/bin/activate
+
+# 👇️ install django in the virtual environment
+pip install django
+
+# 👇️ start your django project
+django-admin startproject mysite
+
+
+# start an app
+django-admin startapp app
+
+#migrate:
+python manage.py makemigration
+python manage.py migrate
+
+# start
+python manage.py runserver
+#create super user
+python manage.py createsuperuser
