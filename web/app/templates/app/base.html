@@ -52,7 +52,7 @@
                   Khóa Học
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">BRSE</a></li>
+                  <li><a class="dropdown-item" href="{% url 'brse' %}">BRSE</a></li>
                   <li><a class="dropdown-item" href="#">IT Comtor</a></li>
                 </ul>
               </li>
@@ -79,7 +79,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Giỏ Hàng</a>
+                <a class="nav-link" href="{% url 'cart' %}">Giỏ Hàng</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Đăng Nhập</a>
@@ -94,6 +94,8 @@
     <!--main body-->
     {% block banner-slider %} {% endblock banner-slider %}
     {% block main-content %} {% endblock main-content %}
+    {% block cart_content %} {% endblock cart_content %}
+    {% block content_checkout %} {% endblock content_checkout %}
     <!--footer-->
     <footer class="container--fluid bg-success text-center fixed-bottom p-2 mt-5">
       copyrights by Savyko!

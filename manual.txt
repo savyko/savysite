@@ -25,7 +25,7 @@ django-admin startproject mysite
 django-admin startapp app
 
 #migrate:
-python manage.py makemigration
+python manage.py makemigrations
 python manage.py migrate
 
 # start

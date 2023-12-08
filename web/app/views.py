@@ -6,3 +6,11 @@ def home(request):
     return render(request, 'app/home.html')
 def base(request):
     return render(request, 'app/base.html')
+def cart(request):
+    context={}
+    return render(request, 'app/cart.html', context)
+def checkout(request):
+    context={}
+    return render(request, 'app/checkout.html', context)
+def brse(request):
+    return render(request, 'app/course/brse.html')
