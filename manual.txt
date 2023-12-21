@@ -32,3 +32,5 @@ python manage.py migrate
 python manage.py runserver
 #create super user
 python manage.py createsuperuser
+
+python -m pip install Pillow

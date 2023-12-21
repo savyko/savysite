@@ -50,43 +50,20 @@
   </div> <!--end banner slide-->
 {% endblock banner-slider %}
 {% block main-content %}
-<!--add list product-->
-<div class="row">
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'app/images/cow-ghee.png' %}">
+<div class="row" style="width: 100%;">
+  {% for product in products %}
+    <div class="col-lg-3">
+        <img class="thumbnail" src="{{product.ImageURL}}">
         <div class="box-element product">
-            <h6><strong>Sản Phẩm</strong></h6>
+            <h6><strong>{{ product.name }}</strong></h6>
             <hr>
 
-            <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
+            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
             <a class="btn btn-outline-success" href="#">Xem</a>
-            <h4 style="display: inline-block; float: right;"><strong>20.000vnđ</strong></h4>
+            <h4 style="display: inline-block; float: right;"><strong>${{ product.price | floatformat:2 }}</strong></h4>
         </div>
     </div>
-    <div class="col-lg-4">
-      <img class="thumbnail" src="{% static 'app/images/cow-milk.png' %}">
-      <div class="box-element product">
-          <h6><strong>Sản Phẩm</strong></h6>
-          <hr>
-
-          <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-          <a class="btn btn-outline-success" href="#">Xem</a>
-          <h4 style="display: inline-block; float: right;"><strong>30.000vnđ</strong></h4>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <img class="thumbnail" src="{% static 'app/images/curd-premium.png' %}">
-      <div class="box-element product">
-          <h6><strong>Sản Phẩm</strong></h6>
-          <hr>
-
-          <button class="btn btn-outline-secondary add-btn">Thêm vào giỏ hàng</button>
-          <a class="btn btn-outline-success" href="#">Xem</a>
-          <h4 style="display: inline-block; float: right;"><strong>40.000vnđ</strong></h4>
-      </div>
-    </div>
-  
-</div> <!--End list product-->
-
+  {% endfor %}
+</div>
 <br><br><br>
 {% endblock main-content %}

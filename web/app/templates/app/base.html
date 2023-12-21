@@ -18,6 +18,25 @@
     <script src="{% static 'app/js/all.min.js' %}"></script>
     <script src="{% static 'app/js/myscript.js' %}"></script>
     <script src="{% static 'app/js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+        function getCookie(name) {
+          let cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              const cookies = document.cookie.split(';');
+              for (let i = 0; i < cookies.length; i++) {
+                  const cookie = cookies[i].trim();
+                  // Does this cookie string begin with the name we want?
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+    </script>
     <style>
       /* Áp dụng font type cho toàn bộ trang */
       body {
@@ -74,7 +93,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Trang Cá Nhân</a></li>
-                  <li><a class="dropdown-item" href="#">Đơn Hàng</a></li>
+                  <li><a class="dropdown-item" href="{% url 'cart' %}">Đơn Hàng</a></li>
                   <li><a class="dropdown-item" href="#">Thoát</a></li>
                 </ul>
               </li>
@@ -100,5 +119,6 @@
     <footer class="container--fluid bg-success text-center fixed-bottom p-2 mt-5">
       copyrights by Savyko!
     </footer>
+    <script src="{% static 'app/js/cart.js' %}"></script>
 </body>
 </html>
